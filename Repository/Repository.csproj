@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexao.cs" />
-    <Compile Include="PessoaFisica\IRepository.cs" />
-    <Compile Include="PessoaFisica\PessoaFisicaRepository.cs" />
+    <Compile Include="PessoaFisicaRepository\IRepository.cs" />
+    <Compile Include="PessoaFisicaRepository\PessoaFisicaRepository.cs" />
+    <Compile Include="PessoaJuridicaRepository\IRepository.cs" />
+    <Compile Include="PessoaJuridicaRepository\PessoaJuridicaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +53,9 @@
       <Project>{908de37c-6144-46b3-a3d8-67f7aab9387f}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PessoaJuridicaRepository\Estrutura.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

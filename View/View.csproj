@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClientePessoaFisicaController.cs" />
+    <Compile Include="Controllers\ClientePessoaJuridicaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -106,6 +107,7 @@
     <Content Include="Views\ClientePessoaFisica\Index.cshtml" />
     <Content Include="Views\ClientePessoaFisica\Editar.cshtml" />
     <Content Include="Views\ClientePessoaFisica\Cadastrar.cshtml" />
+    <Content Include="Views\ClientePessoaJuridica\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

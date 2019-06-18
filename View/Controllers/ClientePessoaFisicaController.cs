@@ -1,5 +1,6 @@
 ﻿using Model;
 using Repository;
+using Repository.PessoaFisicaRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
