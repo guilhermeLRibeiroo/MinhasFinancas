@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>Lista Cliente Pessoa Física</h1>
+
+        <a href="/clientepessoafisica/cadastrar">Cadastrar nova pessoa fisica</a>
+
+        <form action="/clientepessoafisica/index" method="get">
+            <label for="campo-buscar">Buscar</label>
+            <input type="text" id="campo-buscar" name="busca" />
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>RG</th>
+                    <th>CPF</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < @ViewBag.ClientesPessoaFisica.Count; i++)
+                {
+                    <tr>
+                        <td>@ViewBag.ClientesPessoaFisica[i].Id</td>
+                        <td>@ViewBag.ClientesPessoaFisica[i].Nome</td>
+                        <td>@ViewBag.ClientesPessoaFisica[i].RG</td>
+                        <td>@ViewBag.ClientesPessoaFisica[i].CPF</td>
+                        <td>
+                            <a href="/clientepessoafisica/editar?id=@ViewBag.ClientesPessoaFisica[i].Id">Editar</a>
+                            <a href="/clientepessoafisica/apagar?id=@ViewBag.ClientesPessoaFisica[i].Id">Apagar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+
+    </div>
+</body>
+</html>

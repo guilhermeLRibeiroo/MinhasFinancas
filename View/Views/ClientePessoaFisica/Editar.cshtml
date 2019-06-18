@@ -1,0 +1,75 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/PessoaFisicaStyle.css" rel="stylesheet" />
+    <title>Editar</title>
+</head>
+<body>
+    <div>
+        <form action="/clientepessoafisica/update" method="post">
+
+            <div>
+                <label for="campo-nome">Nome</label>
+                <input type="text" minlenght="3" name="nome" id="campo-nome" value="@ViewBag.PessoaFisicaEditar.Nome" />
+            </div>
+
+            <div>
+                <label for="campo=cpf">CPF</label>
+                <input type="text" minlength="14" maxlength="14" name="cpf" id="campo-cpf" value="@ViewBag.PessoaFisicaEditar.CPF" />
+            </div>
+
+            <div>
+                <label for="campo-rg">RG</label>
+                <input type="text" minlength="12" maxlength="12" name="rg" id="campo-rg" value="@ViewBag.PessoaFisicaEditar.RG" />
+            </div>
+
+            <div>
+                <label for="campo-data-nascimento">Data nascimento</label>
+                <input type="date" name="data-nascimento" id="campo-rg" value="@ViewBag.PessoaFisicaEditar.DataNascimento" />
+            </div>
+
+            <div>
+                <label for="campo-sexo">Sexo</label>
+                @if ("masculino" == @ViewBag.PessoaFisicaEditar.Sexo)
+                {
+                    <input type="radio" name="sexo" id="campo-sexo" value="masculino" checked />
+                }
+                else
+                {
+                    <input type="radio" name="sexo" id="campo-sexo" value="masculino" />
+                }
+                Masculino
+                @if ("feminino" == @ViewBag.PessoaFisicaEditar.Sexo)
+                {
+                    <input type="radio" name="sexo" id="campo-sexo" value="feminino" checked />
+                }
+                else
+                {
+                    <input type="radio" name="sexo" id="campo-sexo" value="feminino" />
+                }
+                Feminino
+                @if ("" == @ViewBag.PessoaFisicaEditar.Sexo)
+                {
+                    <input type="radio" name="sexo" id="campo-sexo" value="" checked />
+                }
+                else
+                {
+                    <input type="radio" name="sexo" id="campo-sexo" value="" />
+                }
+                Outro (ou não prefere informa-lo)
+
+                <input type="hidden" name="id" value="@ViewBag.PessoaFisicaEditar.Id" />
+            </div>
+            <div>
+                <button type="submit">Salvar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
