@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexao.cs" />
+    <Compile Include="EnderecoRepository\EnderecoRepository.cs" />
+    <Compile Include="EnderecoRepository\IRepository.cs" />
     <Compile Include="PessoaFisicaRepository\IRepository.cs" />
     <Compile Include="PessoaFisicaRepository\PessoaFisicaRepository.cs" />
     <Compile Include="PessoaJuridicaRepository\IRepository.cs" />
@@ -55,6 +57,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EnderecoRepository\Estrutura.sql" />
     <Content Include="PessoaJuridicaRepository\Estrutura.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
