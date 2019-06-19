@@ -14,6 +14,6 @@ namespace Model
         public string Logradouro;
         public string CEP;
         public int Numero;
-        public string Complemento;  
+        public string Complemento;
     }
 }
