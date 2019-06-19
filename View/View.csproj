@@ -108,6 +108,8 @@
     <Content Include="Views\ClientePessoaFisica\Editar.cshtml" />
     <Content Include="Views\ClientePessoaFisica\Cadastrar.cshtml" />
     <Content Include="Views\ClientePessoaJuridica\Index.cshtml" />
+    <Content Include="Views\ClientePessoaJuridica\Cadastrar.cshtml" />
+    <Content Include="Views\ClientePessoaJuridica\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

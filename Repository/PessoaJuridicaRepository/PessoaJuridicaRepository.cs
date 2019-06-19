@@ -35,6 +35,7 @@ namespace Repository.PessoaJuridicaRepository
             comando.Parameters.AddWithValue("@CNPJ", pessoaJuridica.CNPJ);
             comando.Parameters.AddWithValue("@RAZAO_SOCIAL", pessoaJuridica.RazaoSocial);
             comando.Parameters.AddWithValue("@INSCRICAO_ESTADUAL", pessoaJuridica.InscricaoEstadual);
+            comando.Parameters.AddWithValue("@ID", pessoaJuridica.Id);
             int quantidadeAfetada = comando.ExecuteNonQuery();
             comando.Connection.Close();
             return quantidadeAfetada == 1;
@@ -43,7 +44,7 @@ namespace Repository.PessoaJuridicaRepository
         public int Inserir(PessoaJuridica pessoaJuridica)
         {
             SqlCommand comando = conexao.Conectar();
-            comando.CommandText = "INSERT INTO clientes_pessoa_juridica OUTPUT INSERTED.ID VALUES (@CNPJ, @RAZAO_SOCIAL, @INSCRICAO_ESTADUAL)";
+            comando.CommandText = "INSERT INTO clientes_pessoa_juridica (cnpj, razao_social, inscricao_estadual) OUTPUT INSERTED.ID VALUES (@CNPJ, @RAZAO_SOCIAL, @INSCRICAO_ESTADUAL)";
             comando.Parameters.AddWithValue("@CNPJ", pessoaJuridica.CNPJ);
             comando.Parameters.AddWithValue("@RAZAO_SOCIAL", pessoaJuridica.RazaoSocial);
             comando.Parameters.AddWithValue("@INSCRICAO_ESTADUAL", pessoaJuridica.InscricaoEstadual);
@@ -79,19 +80,19 @@ namespace Repository.PessoaJuridicaRepository
         {
             SqlCommand comando = conexao.Conectar();
             comando.CommandText = "SELECT * FROM clientes_pessoa_juridica WHERE cnpj LIKE @BUSCA";
-            string cnpj = $"%{busca}%";
-            comando.Parameters.AddWithValue("@BUSCA", cnpj);
+            busca = $"%{busca}%";
+            comando.Parameters.AddWithValue("@BUSCA", busca);
 
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
             comando.Connection.Close();
             List<PessoaJuridica> pessoasJuridicas = new List<PessoaJuridica>();
 
-            if (tabela.Rows.Count == 1)
+            for(int i = 0; i < tabela.Rows.Count; i++)
             {
-                DataRow row = tabela.Rows[0];
+                DataRow row = tabela.Rows[i];
                 PessoaJuridica pessoaJuridica = new PessoaJuridica();
-                pessoaJuridica.Id = Convert.ToInt32(row["id"]);
+                pessoaJuridica.Id = Convert.ToInt32(row["id"].ToString());
                 pessoaJuridica.CNPJ = row["cnpj"].ToString();
                 pessoaJuridica.RazaoSocial = row["razao_social"].ToString();
                 pessoaJuridica.InscricaoEstadual = row["inscricao_estadual"].ToString();

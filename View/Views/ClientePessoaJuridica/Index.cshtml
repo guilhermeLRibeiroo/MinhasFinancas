@@ -12,7 +12,36 @@
 </head>
 <body>
     <div> 
-        <label> Lista Clientes Pessoas Juridicas </label>
+        <h1>Lista de clientes pessoa fisica</h1>
     </div>
+    <div>
+        <a href="/clientepessoajuridica/cadastrar">Cadastrar nova pessoa juridica</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>CPNJ</th>
+                <th>Razão Social</th>
+                <th>Inscrição Estadual</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(int i = 0; i < ViewBag.ClientesPessoaJuridica.Count; i++)
+            {
+                <tr>
+                    <th>@ViewBag.ClientesPessoaJuridica[i].Id</th>
+                    <th>@ViewBag.ClientesPessoaJuridica[i].CNPJ</th>
+                    <th>@ViewBag.ClientesPessoaJuridica[i].RazaoSocial</th>
+                    <th>@ViewBag.ClientesPessoaJuridica[i].InscricaoEstadual</th>
+                    <th> 
+                        <a href="/clientepessoajuridica/editar?id=@ViewBag.ClientesPessoaJuridica[i].Id">Editar</a>
+                        <a href="/clientepessoajuridica/apagar?id=@ViewBag.ClientesPessoaJuridica[i].Id">Apagar</a>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
 </body>
 </html>

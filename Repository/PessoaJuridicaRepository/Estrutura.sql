@@ -5,3 +5,5 @@
 	razao_social VARCHAR(100),
 	inscricao_estadual VARCHAR(100)
 );
+
+SELECT * FROM clientes_pessoa_juridica;
