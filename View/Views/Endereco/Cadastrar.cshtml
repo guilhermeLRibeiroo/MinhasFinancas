@@ -12,7 +12,7 @@
 </head>
 <body>
     <div> 
-        <form action="/enderecos/store" method="post">
+        <form action="/endereco/store" method="post">
             <div>
                 <label for="campo-unidade-federativa">Unidade Federativa</label>
                 <select id="campo-unidade-federativa" name="unidadeFederativa">
@@ -35,9 +35,36 @@
                     <option value="PE">Pernambuco</option>
                     <option value="PI">Piauí</option>
                     <option value="RJ">Rio de Janeiro</option>
-
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>/option>
+                    <option value="RR">Roraima</option>/option>
+                    <option value="SC">Santa Catarina</option>/option>
+                    <option value="SP">São Paulo</option>/option>
+                    <option value="SE">Sergipe</option>/option>
+                    <option value="TO">Tocantins</option>/option>
                 </select>
             </div>
+            <div>
+                <label for="campo-cidade">Cidade</label>
+                <input type="text" id="campo-cidade" name="cidade"/>
+            </div>
+            <div>
+                <label for="campo-logradouro">Logradouro</label>
+                <input type="text" name="logradouro" id="campo-logradouro" />
+            </div>
+            <div>
+                <label for="campo-cep">CEP</label>
+                <input type="text" name="cep" id="campo-cep" />
+            </div>
+            <div>
+                <label for="campo-numero">Número</label>
+                <input type="number" name="numero" id="campo-numero" />
+            </div>
+            <div>
+                <label for="campo-complemento">Complemento</label>
+                <textarea id="campo-complemento" name="complemento"></textarea>
+            </div>
+            <button type="submit">Salvar</button>
         </form>
     </div>
 </body>

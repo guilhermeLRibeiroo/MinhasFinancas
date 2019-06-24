@@ -92,7 +92,7 @@ namespace Repository.EnderecoRepository
         public List<Endereco> ObterTodos(string busca)
         {
             SqlCommand comando = conexao.Conectar();
-            comando.CommandText = "SELECT * FROM enderecos WHERE cidade = @BUSCA";
+            comando.CommandText = "SELECT * FROM enderecos WHERE cidade LIKE @BUSCA";
             comando.Parameters.AddWithValue("@BUSCA", $"%{busca}%");
 
             DataTable tabela = new DataTable();

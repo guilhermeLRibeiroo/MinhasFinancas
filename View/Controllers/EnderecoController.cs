@@ -14,7 +14,7 @@ namespace View.Controllers
         public ActionResult Index(string busca)
         {
             EnderecoRepository repositorio = new EnderecoRepository();
-            ViewBag.Enderecos = repositorio.ObterTodos(busca);
+            @ViewBag.ListaEnderecos = repositorio.ObterTodos(busca);
 
             return View();
         }
@@ -24,19 +24,21 @@ namespace View.Controllers
             return View();
         }
 
-        public ActionResult Store(string unidadeFederativa, string cidade, string logradouro, string cep, int numero, string complemento)
+        public ActionResult Store(string unidadeFederativa, string cidade, string logradouro, string cep, double numero, string complemento)
         {
             Endereco endereco = new Endereco();
             endereco.UnidadeFederativa = unidadeFederativa;
             endereco.Cidade = cidade;
             endereco.Logradouro = logradouro;
             endereco.CEP = cep;
-            endereco.Numero = numero;
+            endereco.Numero = (int)numero;
             endereco.Complemento = complemento;
 
             EnderecoRepository repositorio = new EnderecoRepository();
             repositorio.Inserir(endereco);
             return RedirectToAction("Index");
         }
+
+
     }
 }
