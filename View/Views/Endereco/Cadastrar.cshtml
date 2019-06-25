@@ -11,11 +11,20 @@
     <title>Cadastrar</title>
 </head>
 <body>
-    <div> 
+    <div>
+        <h1>Cadastrar</h1>
+    </div>
+    <div>
+        <form>
+            <button formaction="/endereco/index" >Voltar</button>
+        </form>
+    </div>
+    <div>
         <form action="/endereco/store" method="post">
             <div>
                 <label for="campo-unidade-federativa">Unidade Federativa</label>
                 <select id="campo-unidade-federativa" name="unidadeFederativa">
+                    <option value="" disabled selected>Selecione uma Opção</option>
                     <option value="AC">Acre</option>
                     <option value="AL">Alagoas</option>
                     <option value="AP">Amapá</option>
@@ -36,17 +45,17 @@
                     <option value="PI">Piauí</option>
                     <option value="RJ">Rio de Janeiro</option>
                     <option value="RS">Rio Grande do Sul</option>
-                    <option value="RO">Rondônia</option>/option>
-                    <option value="RR">Roraima</option>/option>
-                    <option value="SC">Santa Catarina</option>/option>
-                    <option value="SP">São Paulo</option>/option>
-                    <option value="SE">Sergipe</option>/option>
-                    <option value="TO">Tocantins</option>/option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
                 </select>
             </div>
             <div>
                 <label for="campo-cidade">Cidade</label>
-                <input type="text" id="campo-cidade" name="cidade"/>
+                <input type="text" id="campo-cidade" name="cidade" />
             </div>
             <div>
                 <label for="campo-logradouro">Logradouro</label>

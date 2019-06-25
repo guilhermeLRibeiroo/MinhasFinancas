@@ -113,6 +113,7 @@
     <Content Include="Views\ClientePessoaJuridica\Editar.cshtml" />
     <Content Include="Views\Endereco\Index.cshtml" />
     <Content Include="Views\Endereco\Cadastrar.cshtml" />
+    <Content Include="Views\Endereco\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -39,6 +39,33 @@ namespace View.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Editar(int id)
+        {
+            EnderecoRepository repositorio = new EnderecoRepository();
+            ViewBag.EnderecoEditar = repositorio.ObterPeloId(id);
+            return View();
+        }
 
+        public ActionResult Update(int id, string unidadeFederativa, string cidade, string logradouro, string cep, double numero, string complemento)
+        {
+            Endereco endereco = new Endereco();
+            endereco.UnidadeFederativa = unidadeFederativa;
+            endereco.Cidade = cidade;
+            endereco.Logradouro = logradouro;
+            endereco.CEP = cep;
+            endereco.Numero = (int)numero;
+            endereco.Complemento = complemento;
+            endereco.Id = id;
+            EnderecoRepository repositorio = new EnderecoRepository();
+            repositorio.Atualizar(endereco);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Apagar(int id)
+        {
+            EnderecoRepository repositorio = new EnderecoRepository();
+            repositorio.Apagar(id);
+            return RedirectToAction("Index");
+        }
     }
 }

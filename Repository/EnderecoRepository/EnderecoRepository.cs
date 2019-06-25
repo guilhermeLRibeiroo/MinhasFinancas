@@ -84,7 +84,7 @@ namespace Repository.EnderecoRepository
             endereco.Logradouro = row["logradouro"].ToString();
             endereco.CEP = row["cep"].ToString();
             endereco.Complemento = row["complemento"].ToString();
-            endereco.Numero = Convert.ToInt32(row["cep"]);
+            endereco.Numero = Convert.ToInt32(row["numero"]);
 
             return endereco;
         }
@@ -112,7 +112,7 @@ namespace Repository.EnderecoRepository
                 endereco.Logradouro = row["logradouro"].ToString();
                 endereco.CEP = row["cep"].ToString();
                 endereco.Complemento = row["complemento"].ToString();
-                endereco.Numero = Convert.ToInt32(row["cep"]);
+                endereco.Numero = Convert.ToInt32(row["numero"]);
 
                 enderecos.Add(endereco);
             }

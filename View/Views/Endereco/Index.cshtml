@@ -43,7 +43,10 @@
                    <td>@ViewBag.ListaEnderecos[i].CEP</td>
                    <td>@ViewBag.ListaEnderecos[i].Numero</td>
                    <td>@ViewBag.ListaEnderecos[i].Complemento</td>
-                   <td></td>
+                   <td>
+                       <a href="/endereco/editar?id=@ViewBag.ListaEnderecos[i].Id">Editar</a>
+                       <a href="/endereco/apagar?id=@ViewBag.ListaEnderecos[i].Id">Apagar</a>
+                   </td>
                </tr>
            }
         </tbody>
